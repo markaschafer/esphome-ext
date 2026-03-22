@@ -55,6 +55,8 @@ class SSD1306 : public display::DisplayBuffer {
   void turn_off();
   float get_setup_priority() const override { return setup_priority::PROCESSOR; }
   void fill(Color color) override;
+  void set_precharge(uint8_t val);
+  void set_vcomd(uint8_t val);
 
   display::DisplayType get_display_type() override { return display::DisplayType::DISPLAY_TYPE_BINARY; }
 

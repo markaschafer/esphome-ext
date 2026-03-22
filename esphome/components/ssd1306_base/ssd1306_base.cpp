@@ -360,6 +360,14 @@ void SSD1306::fill(Color color) {
   for (uint32_t i = 0; i < this->get_buffer_length_(); i++)
     this->buffer_[i] = fill;
 }
+void SSD1306::set_precharge(uint8_t val) {
+  this->command(SSD1306_COMMAND_SET_PRE_CHARGE);
+  this->command(val);
+}
+void SSD1306::set_vcomd(uint8_t val) {
+  this->command(SSD1306_COMMAND_SET_VCOM_DETECT);
+  this->command(val);
+}
 void SSD1306::init_reset_() {
   if (this->reset_pin_ != nullptr) {
     this->reset_pin_->setup();

@@ -110,7 +110,7 @@ void SSD1306::setup() {
     // Set oscillator frequency to 4'b1000 with no clock division (0xD5)
     this->command(SSD1306_COMMAND_SET_DISPLAY_CLOCK_DIV);
     // Oscillator frequency <= 4'b1000, no clock division
-    this->command(0x80);
+    this->command(0xF0);
   }
 
   // Enable low power display mode for SSD1305 (0xD8)
